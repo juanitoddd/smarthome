@@ -126,55 +126,59 @@ _.extend(T, {
         T.container.html(T.dashboard_tpl());
 
         $.ajax({
-            url: T.API + '/arduino/digital/13?callback=?',
+            url: T.API + '/arduino/digital/13',
             data: {},
-            success: function(data){
-                console.log(data);
-            },
             crossDomain: true,
-            dataType: 'jsonp',
-            jsonpCallback:'myCB'
         }).done(function(data) {
             console.log(data);
+            if(data == 1){
+                $('#pin13').html('ON');
+                $('#pin13').removeClass('btn-danger');
+                $('#pin13').addClass('btn-success');
+                $('#pin13').attr('data-state',1);
+            }else{
+                $('#pin13').html('Off');
+                $('#pin13').removeClass('btn-success');
+                $('#pin13').addClass('btn-danger');
+                $('#pin13').attr('data-state',0);
+            }
         });
 
         $('#pin13').live('click',function(){
             if($(this).attr('data-state') == 1){
                 $.ajax({
-                    url: T.API + '/arduino/digital/13/0?callback=?',
+                    url: T.API + '/arduino/digital/13/0',
                     data: {},
                     success: function(json){
-                        //console.log(json);
-                        $(this).html('Turn Off');
-                        $(this).attr('data-state',1);
+
                     },
                     crossDomain: true,
-                    dataType: 'jsonp',
-                    jsonpCallback:'myCB'
+                    //dataType: 'jsonp',
+                    //jsonpCallback:'myCB'
                 }).done(function(data) {
-                    console.log(data);
-                    $(this).html('Turn Off');
-                    $(this).attr('data-state',1);
-                });
-                $(this).attr('data-state',0);
+                        console.log(data);
+                        $('#pin13').html('Off');
+                        $('#pin13').removeClass('btn-success');
+                        $('#pin13').addClass('btn-danger');
+                        $('#pin13').attr('data-state',0);
+                    });
             } else {
                 $.ajax({
                     url: T.API + '/arduino/digital/13/1',
                     data: {},
                     success: function(json){
-                        //console.log(json);
-                        $(this).html('Turn On');
-                        $(this).attr('data-state',0);
+
                     },
                     crossDomain: true,
-                    dataType: 'jsonp',
-                    jsonpCallback:'myCB'
+                    //dataType: 'jsonp',
+                    //jsonpCallback:'myCB'
                 }).done(function(data) {
-                    console.log(data);
-                    $(this).html('Turn On');
-                    $(this).attr('data-state',0);
-                });
-                $(this).attr('data-state',1);
+                        console.log(data);
+                        $('#pin13').html('ON');
+                        $('#pin13').removeClass('btn-danger');
+                        $('#pin13').addClass('btn-success');
+                        $('#pin13').attr('data-state',1);
+                    });
             };
         });
     },
