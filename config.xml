@@ -5,9 +5,12 @@
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
     <icon src="www/img/app/icon.png" />
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="juand.diazd@gmail.com" href="http://www.ecuation.com">
+        Juan David Diaz
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <icon src="img/home_72.png" width="72" height="72" />
+    <icon src="img/home_48.png" width="48" height="48" />
+    <icon src="img/home_36.png" width="36" height="36" />
 </widget>
