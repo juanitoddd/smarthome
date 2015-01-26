@@ -10,7 +10,7 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <icon src="www/img/home_72.png" width="72" height="72" />
-    <icon src="www/img/home_48.png" width="48" height="48" />
-    <icon src="www/img/home_36.png" width="36" height="36" />
+    <icon src="img/app/home_72.png" gap:platform="android" width="72" height="72" />
+    <icon src="img/app/home_48.png" gap:platform="android" width="48" height="48" />
+    <icon src="img/app/home_36.png" gap:platform="android" width="36" height="36" />
 </widget>
