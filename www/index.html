@@ -52,7 +52,27 @@
     </script>
     <script type="text/javascript">
         $(document).ready(function() {
-            T.initialize();
+            //T.initialize();
+            $('button').on('click', function(){
+                var that = $(this);
+                var state = $(this).attr('data-state');
+                that.html('<img src="img/loading.gif">');
+                var delay=1000;//1 seconds
+                setTimeout(function(){
+                    if(state == 0){
+                        that.html('Prendida');
+                        that.removeClass('btn-danger');
+                        that.addClass('btn-success');
+                        that.attr('data-state',1);
+                    }else{
+                        that.html('Apagada');
+                        that.removeClass('btn-success');
+                        that.addClass('btn-danger');
+                        that.attr('data-state',0);
+                    }
+                    //your code to be executed after 1 seconds
+                },delay);
+            });
         });
     </script>
 </head>
@@ -65,8 +85,35 @@
     </div>
 </div>
 <div class="text-center">
-    <h1>Smart Home</h1>
+    <h1>Casa Juan</h1>
 </div>
-<div id="container"></div>
+<div id="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Luz de la cocina</h1>
+                <button id="pin14" type="button" class="btn btn-block btn-danger" data-state="0" data-toggle="button" aria-pressed="false" autocomplete="off">
+                    Apagada
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Luz del cuarto</h1>
+                <button id="pin15" type="button" class="btn btn-block btn-danger" data-state="0" data-toggle="button" aria-pressed="false" autocomplete="off">
+                    Apagada
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Luz de la sala</h1>
+                <button id="pin16" type="button" class="btn btn-block btn-danger" data-state="0" data-toggle="button" aria-pressed="false" autocomplete="off">
+                    Apagada
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

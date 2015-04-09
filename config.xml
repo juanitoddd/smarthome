@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.ecuation.fussball" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Smart Home</name>
+    <name>Casa Juan</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Domotica en casa
     </description>
-    <author email="juand.diazd@gmail.com" href="http://www.ecuation.com">
+    <author email="juand.diazd@gmail.com" href="http://www.juanddd.com">
         Juan David Diaz
     </author>
     <content src="index.html" />
